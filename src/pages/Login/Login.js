@@ -5,13 +5,11 @@ import { useNavigation } from '@react-navigation/native'
 import styles from './styles'
 import logoImg from '../../assets/logo.png'
 
-
-
 export default function Login() {
    const navigation = useNavigation()
 
    function navigateToHome() {
-      navigation.navigate('Home')
+      navigation.navigate('Bottom')
    }
 
    function navigateToRegister(incident) {

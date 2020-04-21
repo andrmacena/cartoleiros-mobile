@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
       borderWidth: .3
    },
    titleLogin: {
-      padding: 20,
+      margin: 20,
       fontSize: 25,
       fontWeight: 'bold',
    },
@@ -41,7 +41,6 @@ const styles = StyleSheet.create({
    textLoginButton:{
       fontSize: 20,
       fontWeight: 'bold'
-
    },
    containerOpcoes: {
       flexDirection: 'row',
