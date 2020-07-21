@@ -7,6 +7,7 @@ import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
 import Home from './pages/Home/Home'
 import Team from './pages/Team/Team'
+import Reset from './pages/ResetPassword/ResetPassword'
 
 const AppStack = createStackNavigator()
 const Bottom = createBottomTabNavigator()
@@ -37,6 +38,7 @@ export default function Routes() {
          <AppStack.Navigator initialRouteName={Login} screenOptions={{ headerShown: false }}>
             <AppStack.Screen name='Login' component={Login} />
             <AppStack.Screen name='Register' component={Register} />
+            <AppStack.Screen name='Reset' component={Reset} />
             <AppStack.Screen name='Bottom' component={BottomTabs} />
          </AppStack.Navigator>
       </NavigationContainer>
