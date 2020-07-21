@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, View, TextInput, Image, TouchableOpacity, useNa } from 'react-native';
+import { Text, View, TextInput, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native'
 
 import styles from './styles'
@@ -16,16 +16,12 @@ export default function Register() {
    const navigation = useNavigation()
 
    async function submitData() {
-      console.log(name)
-      console.log(email)
-      console.log(password)
 
       const res = await api.post('users', {
          name,
          email,
          password
       })
-      console.log(res.message)
 
       return res ? navigation.goBack() : 'Erro no cadastro'
    }
