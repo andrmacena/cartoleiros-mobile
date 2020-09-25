@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { Text, View, TextInput, Image, TouchableOpacity, Alert  } from 'react-native';
+import { Text, View, TextInput, Image, TouchableOpacity, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native'
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 
 import styles from './styles'
 import logoImg from '../../assets/logo.png'
@@ -20,14 +22,10 @@ export default function Login() {
             email,
             password
          })
-   
          return res.headers !== '' ? navigateToHome() : Alert.alert(res.status)
-         
       } catch (res) {
          return Alert.alert('Usuário ou senha inválidos')
-         
       }
-      
    }
 
    function navigateToHome() {
@@ -46,8 +44,9 @@ export default function Login() {
          <Image source={logoImg} />
          <Text style={styles.titleLogin}>Login</Text>
          <View style={styles.containerLogin}>
-            <TextInput style={styles.inputLogin} placeholder='Email' onChangeText={email => setEmail(email)} textContentType={"emailAddress"} keyboardType={"email-address"}></TextInput>
-            <TextInput style={styles.inputLogin} placeholder='Senha' onChangeText={password => setPassword(password)} textContentType={"password"} secureTextEntry={true}></TextInput>
+            
+            <TextInput style={styles.inputLogin} placeholder='Email' onChangeText={email => setEmail(email)} textContentType={"emailAddress"} keyboardType={"email-address"}/>
+            <TextInput style={styles.inputLogin} placeholder='Senha' onChangeText={password => setPassword(password)} textContentType={"password"} secureTextEntry={true} />
             <TouchableOpacity style={styles.loginButton} onPress={submitLogin}>
                <Text style={styles.textLoginButton}>Entrar</Text>
             </TouchableOpacity>
