@@ -2371,6 +2371,13 @@ expo-font@~8.1.0:
     fbjs "1.0.0"
     fontfaceobserver "^2.1.0"
 
+expo-image-picker@~8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/expo-image-picker/-/expo-image-picker-8.1.0.tgz#014e4f4aaef4c1daf56d13de27a41ef78660aa15"
+  integrity sha512-UMHiDGiflg47A/nfnmJ1gYdB/sEoxB4STVGgMeLNYpUkVR59kUWqsGTyVEtSywNCLPuXPZVB9NaRUd81Rbs7lA==
+  dependencies:
+    expo-permissions "~8.1.0"
+
 expo-keep-awake@~8.1.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-8.1.0.tgz#3a1d8aa5a8395d40c7d79e1c93020ae5f848e664"
@@ -4416,6 +4423,11 @@ react-native-screens@~2.2.0:
   integrity sha512-a0VzxOWot7F9B/GQyDSssBRd3jUJazFnTQS61IiyReWB6aHlFhf3Xz10jBRoURXy1EMCDCHgenmTVTkKHpKyqQ==
   dependencies:
     debounce "^1.2.0"
+
+react-native-sendgrid@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-sendgrid/-/react-native-sendgrid-1.0.1.tgz#57e4b2becc6aa70a7bcca54818d5dbe169b03d0f"
+  integrity sha512-dQcrsmjheUaI0fTriI29k9RD6KSWvskc0kuLDyLyJl+g4NAx79/Xuoa6JUUeuef4jKpjUXB9ssI2Ju4Vmy00NQ==
 
 react-native-view-shot@3.1.2:
   version "3.1.2"
