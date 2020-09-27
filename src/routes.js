@@ -8,6 +8,7 @@ import Register from './pages/Register/Register'
 import Home from './pages/Home/Home'
 import Team from './pages/Team/Team'
 import Reset from './pages/ResetPassword/ResetPassword'
+import Profile from './pages/Profile/Profile'
 
 const AppStack = createStackNavigator()
 const Bottom = createBottomTabNavigator()
@@ -23,11 +24,11 @@ export function BottomTabs() {
                   alignContent: 'center',
                   justifyContent: 'center'
                }
-
             }}
       >
          <Bottom.Screen name='Home' component={Home} />
          <Bottom.Screen name='Team' component={Team} />
+         <Bottom.Screen name='Profile' component={Profile} />
       </Bottom.Navigator>
    )
 }
