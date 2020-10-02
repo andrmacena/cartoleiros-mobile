@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavigationContainer } from '@react-navigation/native'
+import { NavigationContainer, getFocusedRouteNameFromRoute } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
@@ -12,6 +12,22 @@ import Profile from './pages/Profile/Profile'
 
 const AppStack = createStackNavigator()
 const Bottom = createBottomTabNavigator()
+
+function getHeaderTitle(route) {
+   // If the focused route is not found, we need to assume it's the initial screen
+   // This can happen during if there hasn't been any navigation inside the screen
+   // In our case, it's "Feed" as that's the first screen inside the navigator
+   const routeName = getFocusedRouteNameFromRoute(route) ?? 'Home';
+
+   switch (routeName) {
+      case 'Home':
+         return 'Home';
+      case 'Profile':
+         return 'My profile';
+      case 'Team':
+         return 'Team';
+   }
+}
 
 export function BottomTabs() {
    return (
@@ -40,7 +56,9 @@ export default function Routes() {
             <AppStack.Screen name='Login' component={Login} />
             <AppStack.Screen name='Register' component={Register} />
             <AppStack.Screen name='Reset' component={Reset} />
-            <AppStack.Screen name='Bottom' component={BottomTabs} />
+            <AppStack.Screen name='Bottom' component={BottomTabs} options={({ route }) => (
+               { headerShown: true, title: getHeaderTitle(route) })
+            } />
          </AppStack.Navigator>
       </NavigationContainer>
    )
