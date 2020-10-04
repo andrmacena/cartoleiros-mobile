@@ -57,7 +57,7 @@ export default function Routes() {
             <AppStack.Screen name='Register' component={Register} />
             <AppStack.Screen name='Reset' component={Reset} />
             <AppStack.Screen name='Bottom' component={BottomTabs} options={({ route }) => (
-               { headerShown: true, title: getHeaderTitle(route) })
+               { headerShown: true, title: getHeaderTitle(route), headerStyle: { backgroundColor: '#ccc'}, headerTitleAlign: 'center', headerLeft: null})
             } />
          </AppStack.Navigator>
       </NavigationContainer>
