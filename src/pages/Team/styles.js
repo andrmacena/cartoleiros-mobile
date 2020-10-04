@@ -3,15 +3,12 @@ import { StyleSheet, Dimensions, StatusBar } from 'react-native'
 
 const styles = StyleSheet.create({
    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
+      height: Dimensions.get('window').height - 105,
+      backgroundColor: '#ccc'
    },
    campo: {
-      width: Dimensions.get('screen').width - .5,
-      height: Dimensions.get('screen').height - 160,
-      marginTop: 65
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height - 105
    },
    jogadores: {
       height: 50,
