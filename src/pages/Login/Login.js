@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 
 import styles from './styles'
-import logoImg from '../../assets/logo.png'
+import logoImg from '../../assets/logo_size.jpg'
 
 import api from '../../services/api'
 

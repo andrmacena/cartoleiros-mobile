@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native'
 import * as ImagePicker from 'expo-image-picker';
 
 import styles from './styles'
-import logoImg from '../../assets/logo.png'
+import logoImg from '../../assets/logo_size.jpg'
 
 import api from '../../services/api'
 
