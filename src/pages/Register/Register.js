@@ -49,7 +49,7 @@ export default function Register() {
    return (
       <View style={styles.container}>
          <Image source={logoImg} />
-         <Text style={styles.titleRegister}>Cadastrar</Text>
+         <Text style={styles.titleRegister}>Cria conta</Text>
 
          <TouchableOpacity style={styles.registerButton} onPress={pickImage}>
                <Text style={styles.textRegisterButton}>Selecionar imagem</Text>
