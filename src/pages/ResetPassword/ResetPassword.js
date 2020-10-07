@@ -6,6 +6,8 @@ import logoImg from '../../assets/logo_size.jpg'
 
 export default function ResetPassword() {
 
+   [email, setEmail] = useState('')
+
    return (
       <View style={styles.container}>
          <Image source={logoImg} />
