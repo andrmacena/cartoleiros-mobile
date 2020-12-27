@@ -22,14 +22,24 @@ export default function Login() {
             email,
             password
          })
-         return res.headers !== '' ? navigateToHome() : Alert.alert(res.status)
+
+         return res.headers !== '' ? navigateToHome(res.data) : Alert.alert(res.status)
+
+
       } catch (res) {
          return Alert.alert('Usuário ou senha inválidos')
       }
    }
 
-   function navigateToHome() {
-      navigation.navigate('Bottom')
+
+
+   function navigateToHome(data) {
+      navigation.navigate('Bottom',
+         {
+            screen: 'Home',
+            params: { data }
+         }
+      )
    }
 
    function navigateToRegister(incident) {
@@ -42,8 +52,8 @@ export default function Login() {
    return (
       <View style={styles.container}>
          <View style={styles.containerLogin}>
-         <Image source={logoImg} />
-            <TextInput style={styles.inputLogin} placeholder='Email' onChangeText={email => setEmail(email)} textContentType={"emailAddress"} keyboardType={"email-address"}/>
+            <Image source={logoImg} />
+            <TextInput style={styles.inputLogin} placeholder='Email' onChangeText={email => setEmail(email)} textContentType={"emailAddress"} keyboardType={"email-address"} />
             <TextInput style={styles.inputLogin} placeholder='Senha' onChangeText={password => setPassword(password)} textContentType={"password"} secureTextEntry={true} />
             <TouchableOpacity style={styles.loginButton} onPress={submitLogin}>
                <Text style={styles.textLoginButton}>Entrar</Text>
