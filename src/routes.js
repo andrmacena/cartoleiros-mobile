@@ -9,6 +9,7 @@ import Home from './pages/Home/Home'
 import Team from './pages/Team/Team'
 import Reset from './pages/ResetPassword/ResetPassword'
 import Profile from './pages/Profile/Profile'
+import Player from './pages/Players/Player'
 
 const AppStack = createStackNavigator()
 const Bottom = createBottomTabNavigator()
@@ -26,10 +27,14 @@ function getHeaderTitle(route) {
          return 'My profile';
       case 'Team':
          return 'Team';
+      case 'Player':
+         return 'Player';
    }
 }
 
-export function BottomTabs() {
+export function BottomTabs({ route }) {
+   // const email = route.params.data.email
+   // console.log('route ' + email)
    return (
       <Bottom.Navigator
          initialRouteName={Home}
@@ -44,7 +49,9 @@ export function BottomTabs() {
       >
          <Bottom.Screen name='Home' component={Home} />
          <Bottom.Screen name='Team' component={Team} />
+         <Bottom.Screen name='Player' component={Player} />
          <Bottom.Screen name='Profile' component={Profile} />
+         
       </Bottom.Navigator>
    )
 }
@@ -57,7 +64,7 @@ export default function Routes() {
             <AppStack.Screen name='Register' component={Register} />
             <AppStack.Screen name='Reset' component={Reset} />
             <AppStack.Screen name='Bottom' component={BottomTabs} options={({ route }) => (
-               { headerShown: true, title: getHeaderTitle(route), headerStyle: { backgroundColor: '#ccc'}, headerTitleAlign: 'center', headerLeft: null})
+               { headerShown: true, title: getHeaderTitle(route), headerStyle: { backgroundColor: '#ccc' }, headerTitleAlign: 'center', headerLeft: null })
             } />
          </AppStack.Navigator>
       </NavigationContainer>
