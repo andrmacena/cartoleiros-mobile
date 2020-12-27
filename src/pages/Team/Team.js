@@ -5,8 +5,7 @@ import styles from './styles'
 import campo from '../../assets/campo.jpg'
 import plus from '../../assets/plus-icon.png'
 
-export default class Team extends Component {
-   render() {
+export default function Team () {
       return (
          <View style={styles.container}>
             <ImageBackground source={campo} style={styles.campo}>
@@ -57,7 +56,4 @@ export default class Team extends Component {
             </ImageBackground>
          </View>
       )
-   }
 }
-
-
