@@ -11,6 +11,7 @@ App Preview
   <img alt="desktop" src="./public/preview-readme/reset.jpeg" width="300px" height="600px">
   <img alt="desktop" src="./public/preview-readme/tela-home.jpeg" width="300px" height="600px">
   <img alt="desktop" src="./public/preview-readme/tela-team.jpeg" width="300px" height="600px">
+  <img alt="desktop" src="./public/preview-readme/tela-player.jpeg" width="300px" height="600px">
   <img alt="desktop" src="./public/preview-readme/tela-profile.jpeg" width="300px" height="600px">
 </p>
 
