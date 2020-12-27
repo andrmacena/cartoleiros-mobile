@@ -28,19 +28,30 @@ const styles = StyleSheet.create({
       height: '100%'
    },
    profileInfoContainer:{
-      width: '50%',
+      width: '55%',
       height: '80%',
       margin: 10,
       borderColor: 'green',
       borderWidth: 3
    },
-   profileInfoContainer1: {
+   profileFuncionalidades: {
       flex: 2,
       borderWidth: 1,
       borderRadius: 15,
       width: '95%',
       margin: 10,
-      flexDirection: 'row'
+      flexDirection: 'column',
+      alignItems: 'center',
+
+   },
+   buttonUpdateProfile: {
+      backgroundColor: '#E04021',
+      width: '90%',
+      height: 45,
+      borderRadius: 8,
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginTop: 15
    }
 })
 

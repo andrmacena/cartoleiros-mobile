@@ -14,11 +14,20 @@ export default class Profile extends Component {
                   <Image source={image} style={styles.profileImage} />
                </View>
                <View style={styles.profileInfoContainer}>
-                  <Text>Info sobre a pessoa</Text>
+                  <Text>nome</Text>
+                  <Text>email</Text>
                </View>
             </View>
-            <View style={styles.profileInfoContainer1}>
-               <Text>Info sobre a pessoa</Text>
+            <View style={styles.profileFuncionalidades}>
+               <TouchableOpacity style={styles.buttonUpdateProfile}>
+                  <Text>Editar informações</Text>
+               </TouchableOpacity>
+               <TouchableOpacity style={styles.buttonUpdateProfile}>
+                  <Text>Desativar conta</Text>
+               </TouchableOpacity>
+               <TouchableOpacity style={styles.buttonUpdateProfile}>
+                  <Text>Sair</Text>
+               </TouchableOpacity>
             </View>
          </View>
       )
