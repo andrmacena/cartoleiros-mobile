@@ -5,8 +5,7 @@ import styles from './styles'
 
 import image from '../../assets/plus-icon.png'
 
-export default class Profile extends Component {
-   render() {
+export default function Profile () {
       return (
          <View style={styles.container}>
             <View style={styles.profileInfoImageContainer}>
@@ -31,5 +30,4 @@ export default class Profile extends Component {
             </View>
          </View>
       )
-   }
 }
