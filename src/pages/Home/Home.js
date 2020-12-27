@@ -6,7 +6,6 @@ import styles from './styles'
 import image from '../../assets/plus-icon.png'
 
 export default function Home({ route, navigation }) {
-   // render() {
    const { data } = route.params
    console.log('home - name logado: ' + data.name)
    return (
@@ -45,7 +44,6 @@ export default function Home({ route, navigation }) {
          </View>
       </View>
    )
-   // }
 }
 
 
