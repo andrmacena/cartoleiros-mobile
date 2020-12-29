@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Text, View, TextInput, Image, TouchableOpacity } from 'react-native';
+import { Text, View, TextInput, Image, TouchableOpacity, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native'
+import validator from 'validator'
 
 import styles from './styles'
 import api from '../../services/api'
@@ -14,6 +15,12 @@ export default function SendEmailResetPassword() {
 
    async function submitData() {
 
+      const result = validation()
+
+      if (result) {
+         return Alert.alert('Preencha o campo de email')
+      }
+
       const res = await api.post('service/send', {
          email
       })
@@ -21,9 +28,13 @@ export default function SendEmailResetPassword() {
       return res ? navigateToResetPassword() : Alert.alert('Erro ao enviar email')
    }
 
-   navigateToResetPassword = () => {
+   function navigateToResetPassword() {
       navigation.navigate('ResetPassword',
          email)
+   }
+
+   function validation() {
+      return validator.isEmpty(email)
    }
 
    return (

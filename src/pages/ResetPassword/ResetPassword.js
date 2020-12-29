@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Text, View, TextInput, Image, TouchableOpacity } from 'react-native';
+import { Text, View, TextInput, Image, TouchableOpacity, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native'
+import validator from 'validator'
 
 import styles from './styles'
 import api from '../../services/api'
@@ -15,12 +16,22 @@ export default function ResetPassword({ route }) {
 
    async function submitData() {
 
+      const result = validation()
+
+      if(result){
+         return Alert.alert('Preencha o campo senha!')
+      }
+
       const res = await api.put('users/reset', {
          password,
          email
       })
 
       return res ? navigation.navigate('Login') : Alert.alert('Erro ao tentar trocar senha')
+   }
+
+   function validation() {
+      return validator.isEmpty(password)
    }
 
    return (
