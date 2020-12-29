@@ -7,7 +7,8 @@ import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
 import Home from './pages/Home/Home'
 import Team from './pages/Team/Team'
-import Reset from './pages/ResetPassword/ResetPassword'
+import Reset from './pages/ResetPassword/SendEmailResetPassword'
+import ResetPassword from './pages/ResetPassword/ResetPassword'
 import Profile from './pages/Profile/Profile'
 import Player from './pages/Players/Player'
 
@@ -63,6 +64,7 @@ export default function Routes() {
             <AppStack.Screen name='Login' component={Login} />
             <AppStack.Screen name='Register' component={Register} />
             <AppStack.Screen name='Reset' component={Reset} />
+            <AppStack.Screen name='ResetPassword' component={ResetPassword} />
             <AppStack.Screen name='Bottom' component={BottomTabs} options={({ route }) => (
                { headerShown: true, title: getHeaderTitle(route), headerStyle: { backgroundColor: '#ccc' }, headerTitleAlign: 'center', headerLeft: null })
             } />
