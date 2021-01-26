@@ -7,7 +7,6 @@ import image from '../../assets/plus-icon.png'
 
 export default function Home({ route, navigation }) {
    const { data } = route.params
-   console.log('home - name logado: ' + data.name)
    return (
       <View style={styles.container}>
          <View style={styles.infoTeam}>
