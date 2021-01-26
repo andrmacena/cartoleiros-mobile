@@ -30,11 +30,7 @@ export default function Login() {
    }
 
    function navigateToHome(data) {
-      navigation.navigate('Bottom',
-         {
-            screen: 'Home',
-            params: { data }
-         }
+      navigation.navigate('Bottom', {data}
       )
    }
 
