@@ -16,12 +16,17 @@ const styles = StyleSheet.create({
       margin: 10,
       flexDirection: 'row'
    },
+   infoText: {
+      fontWeight: '300',
+      fontSize: 20,
+      padding: 5,
+      fontStyle: 'normal'
+   },
    profileImageContainer:{
-      width: '35%',
+      width: '40%',
       height: '80%',
-      margin: 10,
-      borderColor: 'red',
-      borderWidth: 3
+      margin: 15,
+      borderWidth: 1,
    },
    profileImage: {
       width: '100%',
@@ -31,18 +36,15 @@ const styles = StyleSheet.create({
       width: '55%',
       height: '80%',
       margin: 10,
-      borderColor: 'green',
-      borderWidth: 3
    },
    profileFuncionalidades: {
       flex: 2,
-      borderWidth: 1,
       borderRadius: 15,
       width: '95%',
-      margin: 10,
+      margin: 20,
       flexDirection: 'column',
       alignItems: 'center',
-
+      justifyContent: 'flex-end'
    },
    buttonUpdateProfile: {
       backgroundColor: '#E04021',
