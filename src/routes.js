@@ -34,8 +34,7 @@ function getHeaderTitle(route) {
 }
 
 export function BottomTabs({ route }) {
-   // const email = route.params.data.email
-   // console.log('route ' + email)
+   const { data } = route.params
    return (
       <Bottom.Navigator
          initialRouteName={Home}
@@ -48,11 +47,11 @@ export function BottomTabs({ route }) {
                }
             }}
       >
-         <Bottom.Screen name='Home' component={Home} />
-         <Bottom.Screen name='Team' component={Team} />
-         <Bottom.Screen name='Player' component={Player} />
-         <Bottom.Screen name='Profile' component={Profile} />
-         
+         <Bottom.Screen name='Home' component={Home} initialParams={{ data }} />
+         <Bottom.Screen name='Team' component={Team} initialParams={{ data }} />
+         <Bottom.Screen name='Player' component={Player} initialParams={{ data }} />
+         <Bottom.Screen name='Profile' component={Profile} initialParams={{ data }} />
+
       </Bottom.Navigator>
    )
 }
