@@ -1,55 +1,45 @@
-import React, { Component } from 'react';
-import { Text, View, TextInput, Image, TouchableOpacity } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Text, View, Image, FlatList } from 'react-native';
 
 import styles from './styles'
+import api from '../../services/api'
 
 import image from '../../assets/plus-icon.png'
 
 export default function Player({ route, navigation }) {
-   // const { data } = route.params
-   // console.log('home - name logado: ' + data.name)
+   const { data } = route.params
+   const [players, setPlayers] = useState([])
+
+
+   useEffect(() => {
+      getAllPlayers()
+   })
+
+   async function getAllPlayers() {
+      const res = await api.get('/players',
+         { 'headers': { 'x-access-token': data.token } }
+      )
+
+      setPlayers(res.data)
+   }
+
    return (
       <View style={styles.container}>
-         <View style={styles.infoPlayer}>
-            <View style={styles.imagePlayerContainer}>
-               <Image source={image} style={styles.imagePlayer} />
-            </View>
-            <View style={styles.infoPlayerContainer}>
-               <Text>name player</Text>
-               <Text>points</Text>
-               <Text>value</Text>
-            </View>
-         </View>
-         <View style={styles.infoPlayer}>
-            <View style={styles.imagePlayerContainer}>
-               <Image source={image} style={styles.imagePlayer} />
-            </View>
-            <View style={styles.infoPlayerContainer}>
-               <Text>name player</Text>
-               <Text>points</Text>
-               <Text>value</Text>
-            </View>
-         </View>
-         <View style={styles.infoPlayer}>
-            <View style={styles.imagePlayerContainer}>
-               <Image source={image} style={styles.imagePlayer} />
-            </View>
-            <View style={styles.infoPlayerContainer}>
-               <Text>name player</Text>
-               <Text>points</Text>
-               <Text>value</Text>
-            </View>
-         </View>
-         <View style={styles.infoPlayer}>
-            <View style={styles.imagePlayerContainer}>
-               <Image source={image} style={styles.imagePlayer} />
-            </View>
-            <View style={styles.infoPlayerContainer}>
-               <Text>name player</Text>
-               <Text>points</Text>
-               <Text>value</Text>
-            </View>
-         </View>
+         <FlatList
+            data={players}
+            keyExtractor={item => item.id.toString()}
+            renderItem={({ item }) => (
+               <View style={styles.infoPlayer}>
+                  <View style={styles.imagePlayerContainer}>
+                     <Image source={image} style={styles.imagePlayer} />
+                  </View>
+                  <View style={styles.infoPlayerContainer}>
+                     <Text>{item.name}</Text>
+                     <Text>{item.position}</Text>
+                     <Text>{item.points}</Text>
+                  </View>
+               </View>)}
+         />
       </View>
    )
 }
