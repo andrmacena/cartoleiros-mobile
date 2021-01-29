@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
    },
    infoPlayer: {
       flex: 3,
-      backgroundColor: 'red',
+      // backgroundColor: 'red',
       alignItems: 'center',
       borderWidth: 1,
       borderRadius: 15,
@@ -19,10 +19,15 @@ const styles = StyleSheet.create({
       flexDirection: 'row'
    },
    infoPlayerContainer: {
-      width: '55%',
+      width: '60%',
       height: '80%',
-      borderWidth: 1,
-      marginRight: '5%'
+      // borderWidth: 1,
+      // borderRadius: 15,
+      marginRight: 20,
+      padding: 5
+   },
+   infoPlayerText: {
+      fontSize: 15
    },
    imagePlayerContainer: {
       width: '30%',

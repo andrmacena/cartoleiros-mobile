@@ -34,9 +34,9 @@ export default function Player({ route, navigation }) {
                      <Image source={image} style={styles.imagePlayer} />
                   </View>
                   <View style={styles.infoPlayerContainer}>
-                     <Text>{item.name}</Text>
-                     <Text>{item.position}</Text>
-                     <Text>{item.points}</Text>
+                     <Text style={styles.infoPlayerText}>Nome: {item.name}</Text>
+                     <Text style={styles.infoPlayerText}>Posição: {item.position}</Text>
+                     <Text style={styles.infoPlayerText}>Pontuação: {item.points}</Text>
                   </View>
                </View>)}
          />
